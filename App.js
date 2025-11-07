@@ -14,7 +14,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-// 🔥 Firebase
+// Firebase
 import {
   getFirestore,
   collection,
@@ -25,7 +25,8 @@ import {
   query,
   orderBy,
 } from "firebase/firestore";
-import { app } from "./firebaseConfig";
+import app from "./firebaseConfig";
+
 
 const db = getFirestore(app);
 
@@ -37,7 +38,7 @@ function AppProvider({ children }) {
   const [user, setUser] = useState(null);
   const [deals, setDeals] = useState([]);
 
-  // 👇 Real-time listener to all deals
+
   useEffect(() => {
     const q = query(collection(db, "deals"), orderBy("date", "desc"));
     const unsubscribe = onSnapshot(q, (snapshot) => {

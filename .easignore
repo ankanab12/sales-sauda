@@ -1,0 +1,23 @@
+# Ignore local Expo cache
+.expo/
+
+# Ignore Git data
+.git/
+.gitignore
+
+# Ignore Node.js cache
+node_modules/
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+*.log
+
+# macOS / Windows junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Firebase backend (if still inside project)
+functions/
